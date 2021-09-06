@@ -2,6 +2,10 @@ a {
   text-decoration: none;
 }
 
+.img50{
+  width: 50%;
+}
+
 h1 {
   font-family: Staatliches;
   font-size: 120px;

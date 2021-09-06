@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
-const ARTICLES_QUERY = gql`
-  query Articles {
-    articles {
+const ARTICLE_QUERY = gql`
+  query Article($slug: String!){
+    articles(where: {slug: $slug}) {
       slug
       title
       category {
@@ -16,4 +16,4 @@ const ARTICLES_QUERY = gql`
   }
 `;
 
-export default ARTICLES_QUERY;
+export default ARTICLE_QUERY;

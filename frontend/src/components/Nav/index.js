@@ -11,20 +11,32 @@ const Nav = () => {
         {({ data: { categories } }) => {
           return (
             <div>
-              <nav className="uk-navbar-container" data-uk-navbar>
-                <div className="uk-navbar-left">
-                  <ul className="uk-navbar-nav">
-                    <li>
-                      <Link to="/">Strapi Blog</Link>
-                    </li>
-                  </ul>
-                </div>
+              <nav class="navbar navbar-expand-lg navbar-light mb-3">
+                <div class="container">
+                  <a class="navbar-brand">
+                    <Link to="/">
+                      <img
+                        class='img50 d-none d-xl-block'
+                        src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_38_1.png"
+                      />
+                    </Link>
+                  </a>
 
-                <div className="uk-navbar-right">
-                  <ul className="uk-navbar-nav">
+                  <button 
+                    class="navbar-toggler" 
+                    type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     {categories.map((category, i) => {
                       return (
-                        <li key={category.slug}>
+                        <li class="nav-item text-uppercase px-2" key={category.slug}>
                           <Link
                             to={`/category/${category.slug}`}
                             className="uk-link-reset"
@@ -36,7 +48,9 @@ const Nav = () => {
                     })}
                   </ul>
                 </div>
-              </nav>
+              </div>
+            </nav>
+
             </div>
           );
         }}

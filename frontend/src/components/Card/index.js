@@ -8,23 +8,22 @@ const Card = ({ article }) => {
       : process.env.REACT_APP_BACKEND_URL + article.image.url;
   return (
     <Link to={`/article/${article.slug}`} className="uk-link-reset">
-      <div className="uk-card uk-card-muted">
-        <div className="uk-card-media-top">
+      <div class="card mb-4">
+        <div>
           <img
+            class="card-img-top lazy-image"
             src={imageUrl}
             alt={article.image.url}
             height="100"
           />
         </div>
-        <div className="uk-card-body">
-          <p id="category" className="uk-text-uppercase">
-            {article.category.name}
-          </p>
-          <p id="title" className="uk-text-large">
-            {article.title}
-          </p>
-        </div>
-      </div>
+        <div class="card-body">
+          <h2 class="card-title">{article.title}</h2>
+       </div>
+       <div class="card-footer text-muted">
+        <p>Posted in category : {article.category.name}</p>
+       </div>
+    </div>
     </Link>
   );
 };

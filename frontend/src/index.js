@@ -5,6 +5,7 @@ import App from "./containers/App";
 import client from "./utils/apolloClient";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <Router>
