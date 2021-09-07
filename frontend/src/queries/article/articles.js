@@ -5,6 +5,11 @@ const ARTICLES_QUERY = gql`
     articles {
       slug
       title
+      content
+      description
+      author{
+        name
+      }
       category {
         slug
         name

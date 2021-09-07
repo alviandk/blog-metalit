@@ -5,6 +5,11 @@ const ARTICLE_QUERY = gql`
     articles(where: {slug: $slug}) {
       slug
       title
+      content
+      description
+      author{
+        name
+      }
       category {
         slug
         name

@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import Articles from "../../components/Articles";
 import Query from "../../components/Query";
 import CATEGORY_ARTICLES_QUERY from "../../queries/category/articles";
+import { Link } from "react-router-dom";
 
 const Category = () => {
   let { id } = useParams();
@@ -14,12 +15,21 @@ const Category = () => {
         if (categories.length) {
           return (
             <div>
-              <div className="uk-section">
-                <div className="uk-container uk-container-large">
-                  <h1>{categories[0].name}</h1>
+              <section>
+                <div className="container py-3">
+                  <h1 class="my-4 px-3">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                          <Link className="text-decoration-none" to="/">Home</Link>
+                        </li>  
+                        <li class="breadcrumb-item active" aria-current="page">{categories[0].name}</li>
+                      </ol>
+                    </nav>
+                  </h1>
                   <Articles articles={categories[0].articles} />
                 </div>
-              </div>
+              </section>
             </div>
           );
         }

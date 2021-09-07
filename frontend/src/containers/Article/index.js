@@ -3,7 +3,6 @@ import { useParams } from "react-router";
 import Query from "../../components/Query";
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
-
 import ARTICLE_QUERY from "../../queries/article/article";
 
 const Article = () => {
@@ -20,24 +19,20 @@ const Article = () => {
               : process.env.REACT_APP_BACKEND_URL + articles[0].image.url;
 
           return (
-            <div>
-              <div
-                id="banner"
-                className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
-                data-src={imageUrl}
-                data-srcset={imageUrl}
-                data-uk-img
-              >
-                <h1>{articles[0].title}</h1>
-              </div>
-
-              <div className="uk-section">
-                <div className="uk-container uk-container-small">
-                  <ReactMarkdown source={articles[0].content} />
-                  <p>
-                    <Moment format="MMM Do YYYY">{articles[0].published_at}</Moment>
-                  </p>
+            <div class="container py-5"> 
+              <div class="jumbotron px-4"> 
+                <h1 class="text-center mb-5">{articles[0].title}</h1>   
+                <p>
+                  Posted by {articles[0].author.name} at <Moment format="MMM Do YYYY">
+                  {articles[0].published_at}</Moment>
+                </p>
+                <div class="mb-5">
+                  <img
+                    src={imageUrl}
+                    alt={articles[0].image.url}
+                  />
                 </div>
+                <ReactMarkdown children={articles[0].content} />
               </div>
             </div>
           );

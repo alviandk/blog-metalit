@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Moment from "react-moment";
 
 const Card = ({ article }) => {
   const imageUrl =
@@ -18,10 +19,15 @@ const Card = ({ article }) => {
           />
         </div>
         <div class="card-body">
-          <h2 class="card-title">{article.title}</h2>
-       </div>
+          <h1>{article.title}</h1>
+          <p>{article.description}</p>
+        </div>
        <div class="card-footer text-muted">
-        <p>Posted in category : {article.category.name}</p>
+        <p>
+          Posted by {article.author.name} in category <b class="text-capitalize">
+          {article.category.name}</b> on <Moment format="MMM Do YYYY">
+          {article.published_at}</Moment>
+        </p>    
        </div>
     </div>
     </Link>
