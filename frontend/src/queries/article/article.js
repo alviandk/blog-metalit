@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 
 const ARTICLE_QUERY = gql`
   query Article($slug: String!){
-    articles(where: {slug: $slug}) {
+    articles(where: {slug: $slug} limit:3) {
       slug
       title
       content
