@@ -12,13 +12,32 @@ class Footer extends Component {
                         <div class="footer-pad">
                           <ul class="list-unstyled">
                             <li>
-                              <a class="text-reset text-decoration-none">Pusat Bantuan</a>
+                              <a class="text-reset text-decoration-none"
+                                href={process.env.REACT_APP_HELP_URL}
+                              >
+                                Pusat Bantuan
+                              </a>
                             </li>
                             <li>
-                              <a class="text-reset text-decoration-none">Syarat dan Ketentuan</a>
+                            <li>
+                              <a class="text-reset text-decoration-none"
+                                href={process.env.REACT_APP_CONTACT_URL}
+                                >
+                                Hubungi Kami
+                              </a>
+                            </li>
+                              <a class="text-reset text-decoration-none"
+                                href={process.env.REACT_APP_TERM_URL}
+                              >
+                                Syarat dan Ketentuan
+                              </a>
                             </li>
                             <li>
-                              <a class="text-reset text-decoration-none">Kebijakan Privasi</a>
+                              <a class="text-reset text-decoration-none"
+                                href={process.env.REACT_APP_PRIVACY_URL}
+                              >
+                                Kebijakan Privasi
+                              </a>
                             </li>
                            </ul>
                         </div>

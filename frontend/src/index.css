@@ -2,6 +2,8 @@ a {
   text-decoration: none;
 }
 
+a:hover { text-decoration: none; }
+
 .img50{
   width: 50%;
 }

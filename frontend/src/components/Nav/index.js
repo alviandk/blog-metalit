@@ -1,7 +1,7 @@
 import React from "react";
 import Query from "../Query";
 import { Link } from "react-router-dom";
-
+import { NavLink } from 'react-router-dom'
 import CATEGORIES_QUERY from "../../queries/category/categories";
 
 const Nav = () => {
@@ -34,18 +34,18 @@ const Nav = () => {
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    {categories.map((category, i) => {
-                      return (
-                        <li class="nav-item text-uppercase px-2" key={category.slug}>
-                          <Link
-                            to={`/category/${category.slug}`}
-                            className="uk-link-reset"
-                          >
-                            {category.name}
-                          </Link>
-                        </li>
-                      );
-                    })}
+                    <li class="nav-item text-uppercase px-2">
+                      <a class="nav-link" href={process.env.REACT_APP_METALIT_URL}>Beranda</a>
+                    </li>
+                    <li class="nav-item text-uppercase px-2">
+                      <a class="nav-link" href={process.env.REACT_APP_COURSE_URL} >Pelatihan</a>
+                    </li>
+                    <li class="nav-item text-uppercase px-2">
+                      <NavLink to="/" className="nav-link active">Blog</NavLink>
+                    </li>
+                    <li class="nav-item text-uppercase px-2">
+                      <a class="nav-link" href={process.env.REACT_APP_ABOUT_URL}>Tentang Kami</a>
+                    </li>
                   </ul>
                 </div>
               </div>
