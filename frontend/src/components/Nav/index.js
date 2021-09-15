@@ -3,6 +3,10 @@ import Query from "../Query";
 import { Link } from "react-router-dom";
 import { NavLink } from 'react-router-dom'
 import CATEGORIES_QUERY from "../../queries/category/categories";
+const home= process.env.REACT_APP_METALIT_URL
+const course=home + `/course`
+const about=home + `/about`
+
 
 const Nav = () => {
   return (
@@ -35,16 +39,16 @@ const Nav = () => {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item text-uppercase px-2">
-                      <a class="nav-link" href={process.env.REACT_APP_METALIT_URL}>Beranda</a>
+                      <a class="nav-link" href={home}>Beranda</a>
                     </li>
                     <li class="nav-item text-uppercase px-2">
-                      <a class="nav-link" href={process.env.REACT_APP_COURSE_URL} >Pelatihan</a>
+                      <a class="nav-link" href={course}>Pelatihan</a>
                     </li>
                     <li class="nav-item text-uppercase px-2">
                       <NavLink to="/" className="nav-link active">Blog</NavLink>
                     </li>
                     <li class="nav-item text-uppercase px-2">
-                      <a class="nav-link" href={process.env.REACT_APP_ABOUT_URL}>Tentang Kami</a>
+                      <a class="nav-link" href={about}>Tentang Kami</a>
                     </li>
                   </ul>
                 </div>
