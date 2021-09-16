@@ -24,11 +24,10 @@ import {
   EmailIcon,
 
 } from 'react-share';
-const shareUrl = window.location;
 
+const shareUrl = window.location;
 const Article = () => {
   let { id } = useParams();
-
   return (
     <Query query={ARTICLE_QUERY} slug={id}>
       {({ data: { articles } }) => {
@@ -58,7 +57,8 @@ const Article = () => {
                 </div>
                 <div class="row">
                   <div class="col-md-12 copy">
-                    <div class="text-center">
+                    <div>
+                      <span>Share With : </span>
                       <span class="mx-2">
                         <FacebookShareButton
                           url={shareUrl}

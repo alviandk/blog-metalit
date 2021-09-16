@@ -1,10 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
-const home= process.env.REACT_APP_METALIT_URL
-const help=home + `/help`
-const contact=home + `/contact`
-const term_conditions=home + `/term-conditions`
-const privacy_policy=home + `/privacy-policy`
+import { Help, Contact, Term_Conditions, Privacy_Policy  } from '../../constant';
 
 class Footer extends Component {
     render() {
@@ -18,7 +14,7 @@ class Footer extends Component {
                           <ul class="list-unstyled">
                             <li>
                               <a class="text-reset text-decoration-none"
-                                href={help}
+                                href={Help}
                               >
                                 Pusat Bantuan
                               </a>
@@ -26,20 +22,20 @@ class Footer extends Component {
                             <li>
                             <li>
                               <a class="text-reset text-decoration-none"
-                                href={contact}
+                                href={Contact}
                                 >
                                 Hubungi Kami
                               </a>
                             </li>
                               <a class="text-reset text-decoration-none"
-                                href={term_conditions}
+                                href={Term_Conditions}
                               >
                                 Syarat dan Ketentuan
                               </a>
                             </li>
                             <li>
                               <a class="text-reset text-decoration-none"
-                                href={privacy_policy}
+                                href={Privacy_Policy}
                               >
                                 Kebijakan Privasi
                               </a>
