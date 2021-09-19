@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
+import { Help, Contact, Term_Conditions, Privacy_Policy  } from '../../constant';
 
 class Footer extends Component {
     render() {
@@ -13,7 +14,7 @@ class Footer extends Component {
                           <ul class="list-unstyled">
                             <li>
                               <a class="text-reset text-decoration-none"
-                                href={process.env.REACT_APP_HELP_URL}
+                                href={Help}
                               >
                                 Pusat Bantuan
                               </a>
@@ -21,20 +22,20 @@ class Footer extends Component {
                             <li>
                             <li>
                               <a class="text-reset text-decoration-none"
-                                href={process.env.REACT_APP_CONTACT_URL}
+                                href={Contact}
                                 >
                                 Hubungi Kami
                               </a>
                             </li>
                               <a class="text-reset text-decoration-none"
-                                href={process.env.REACT_APP_TERM_URL}
+                                href={Term_Conditions}
                               >
                                 Syarat dan Ketentuan
                               </a>
                             </li>
                             <li>
                               <a class="text-reset text-decoration-none"
-                                href={process.env.REACT_APP_PRIVACY_URL}
+                                href={Privacy_Policy}
                               >
                                 Kebijakan Privasi
                               </a>
@@ -45,7 +46,6 @@ class Footer extends Component {
                       <div class="col-md-3 col-sm-6"></div>
                       <div class="col-md-3 col-sm-6"></div>
                       <div class="col-md-3">
-                        <p>Hubungi Kami</p>
                         <p>Jl. Bangka Raya No.17, RT.13/RW.01, 
                             Bangka,Kec. Mampang Prpt, Kota Jakarta Selatan, 
                             Daerah Khusus Ibukota Jakarta 12730
