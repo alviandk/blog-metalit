@@ -6,16 +6,17 @@ import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/client';
 
 const Home = () => {
-  const { loading, error, data } = useQuery(ARTICLES_QUERY);
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-  
+  const { loading, error, data } = useQuery(ARTICLES_QUERY);  
   if (error) {
     console.error(error);
     return (
-      <div className="container py-4">
-        <h1 class="my-4 text-center">Artikel Tidak Tersedia</h1>
+      <div>
+        <div className="container py-4">
+          <h1 class="my-5">
+            <Link className="text-decoration-none" to="/">Blog</Link>
+          </h1>
+          <p>Artikel tidak tersedia</p>
+        </div>
       </div>
     );
   }

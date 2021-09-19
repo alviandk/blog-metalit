@@ -46,7 +46,6 @@ class Footer extends Component {
                       <div class="col-md-3 col-sm-6"></div>
                       <div class="col-md-3 col-sm-6"></div>
                       <div class="col-md-3">
-                        <p>Hubungi Kami</p>
                         <p>Jl. Bangka Raya No.17, RT.13/RW.01, 
                             Bangka,Kec. Mampang Prpt, Kota Jakarta Selatan, 
                             Daerah Khusus Ibukota Jakarta 12730
