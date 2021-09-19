@@ -7,10 +7,7 @@ import { Home, Course, About} from "../../constant";
 
 const Nav = () => {
   return (
-    <div>
-      <Query query={CATEGORIES_QUERY} id={null}>
-        {({ data: { categories } }) => {
-          return (
+          <div>
             <div>
               <nav class="navbar navbar-expand-lg navbar-light mb-3">
                 <div class="container">
@@ -53,11 +50,8 @@ const Nav = () => {
             </nav>
 
             </div>
-          );
-        }}
-      </Query>
-    </div>
-  );
-};
+          </div>
+        );
+  };
 
 export default Nav;
