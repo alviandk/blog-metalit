@@ -11,7 +11,7 @@ const Home = () => {
     console.error(error);
     return (
       <div>
-        <div className="container py-4">
+        <div className="container py-3">
           <h1 class="my-5">
             <Link className="text-decoration-none" to="/">Blog</Link>
           </h1>

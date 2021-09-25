@@ -14,9 +14,7 @@ const ARTICLES_QUERY = gql`
         slug
         name
       }
-      image {
-        url
-      }
+      image
     }
   }
 `;

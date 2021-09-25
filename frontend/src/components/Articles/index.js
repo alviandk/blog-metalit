@@ -24,9 +24,9 @@ const Articles = ({ articles }) => {
               <h5 class="card-header">Categories</h5>
               <div class="card-body">
                 <Query query={CATEGORIES_QUERY} id={null}>
-                  {({ data: { categories } }) => {
-                    const left = categories.slice(0, 3);
-                    const right = categories.slice(3, 5);
+                  {({ data: { category } }) => {
+                    const left = category.slice(0, 3);
+                    const right = category.slice(3, 5);
 
                     return (
                       <div class="row">

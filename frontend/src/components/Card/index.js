@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 import Moment from "react-moment";
 
 const Card = ({ article }) => {
-  const imageUrl =
-    process.env.NODE_ENV !== "development"
-      ? article.image.url
-      : process.env.REACT_APP_BACKEND_URL + article.image.url;
+  const imageUrl = article.image;
   return (
     <Link to={`/article/${article.slug}`} className="uk-link-reset">
       <div class="card mb-4">
@@ -14,7 +11,7 @@ const Card = ({ article }) => {
           <img
             class="card-img-top lazy-image"
             src={imageUrl}
-            alt={article.image.url}
+            alt={imageUrl}
             height="100"
           />
         </div>

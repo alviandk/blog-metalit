@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 const ARTICLE_QUERY = gql`
-  query Article($slug: String!){
-    articles(where: {slug: $slug}) {
+  query Article($slug:String!){
+    article(slug:$slug) {
       slug
       title
       content
@@ -14,9 +14,7 @@ const ARTICLE_QUERY = gql`
         slug
         name
       }
-      image {
-        url
-      }
+      image
     }
   }
 `;
