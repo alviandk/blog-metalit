@@ -10,21 +10,21 @@ const Home = () => {
   if (error) {
     console.error(error);
     return (
-      <div>
-        <div className="container py-3">
-          <h1 class="my-5">
+      <header className="py-5 px-3">
+        <div className="container px-5">
+          <h1>
             <Link className="text-decoration-none" to="/">Blog</Link>
           </h1>
           <p>Artikel tidak tersedia</p>
         </div>
-      </div>
+      </header>
     );
   }
 
   return (
-    <div>
-      <div className="container py-3">
-        <h1 class="my-4 px-3">
+    <header className="py-5 px-3">
+      <div className="container px-5">
+        <h1>
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
@@ -40,7 +40,7 @@ const Home = () => {
           return <Articles articles={articles} />;
         }}
       </Query>
-    </div>
+    </header>
   );
 };
 

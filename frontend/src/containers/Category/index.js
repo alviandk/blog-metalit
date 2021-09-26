@@ -14,10 +14,9 @@ const Category = () => {
 
         if (categories.length) {
           return (
-            <div>
-              <section>
-                <div className="container py-3">
-                  <h1 class="my-4 px-3">
+            <header className="py-5 px-3">
+              <div className="container px-5">
+                  <h1>
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
                         <li class="breadcrumb-item">
@@ -29,8 +28,7 @@ const Category = () => {
                   </h1>
                   <Articles articles={categories[0].articles} />
                 </div>
-              </section>
-            </div>
+            </header>
           );
         }
       }}

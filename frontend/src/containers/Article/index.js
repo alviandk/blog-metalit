@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router";
 import Query from "../../components/Query";
 import ReactMarkdown from "react-markdown";
+import ReactHtmlParser from "react-html-parser";
 import Moment from "react-moment";
 import { useLocation } from 'react-router-dom';
 import ARTICLE_QUERY from "../../queries/article/article";
@@ -32,25 +33,24 @@ const Article = () => {
     <Query query={ARTICLE_QUERY} slug={id}>
       {({ data: { article } }) => {
 
-        if (article.length) {
-          const imageUrl =article[0].image;
+          const imageUrl =article.image;
 
           return (
             <div class="container py-5"> 
               <div class="jumbotron px-4"> 
-                <h1 class="text-center mb-5">{article[0].title}</h1>   
+                <h1 class="text-center mb-5">{article.title}</h1>   
                 <p>
-                  Posted by {article[0].author.name} at <Moment format="MMM Do YYYY">
-                  {article[0].published_at}</Moment>
+                  Posted by {article.author.name} at <Moment format="MMM Do YYYY">
+                  {article.published_at}</Moment>
                 </p>
                 <div class="mb-5">
                   <img
                     src={imageUrl}
-                    alt={article[0].image}
+                    alt={article.image}
                   />
                 </div>
                 <div class="mb-5">
-                  <ReactMarkdown children={article[0].content} />
+                  {ReactHtmlParser(article.content)}
                 </div>
                 <div class="row">
                   <div class="col-md-12 copy">
@@ -59,7 +59,7 @@ const Article = () => {
                       <span class="mx-2">
                         <FacebookShareButton
                           url={shareUrl}
-                          quote={article[0].title}
+                          quote={article.title}
                           >
                           <FacebookIcon size={32} round />
                         </FacebookShareButton>
@@ -67,7 +67,7 @@ const Article = () => {
                       <span class="mx-2">
                         <FacebookMessengerShareButton
                           url={shareUrl}
-                          quote={article[0].title}
+                          quote={article.title}
                           >
                           <FacebookMessengerIcon size={32} round />
                         </FacebookMessengerShareButton>
@@ -75,7 +75,7 @@ const Article = () => {
                       <span class="mx-2">
                         <TwitterShareButton
                           url={shareUrl}
-                          title={article[0].title}
+                          title={article.title}
                           >
                           <TwitterIcon size={32} round />
                         </TwitterShareButton>
@@ -83,7 +83,7 @@ const Article = () => {
                       <span class="mx-2">
                         <WhatsappShareButton
                           url={shareUrl}
-                          quote={article[0].title}
+                          quote={article.title}
                           >
                           <WhatsappIcon size={32} round />
                         </WhatsappShareButton>
@@ -91,7 +91,7 @@ const Article = () => {
                       <span class="mx-2">
                         <TelegramShareButton
                           url={shareUrl}
-                          quote={article[0].title}
+                          quote={article.title}
                           >
                           <TelegramIcon size={32} round />
                         </TelegramShareButton>
@@ -99,7 +99,7 @@ const Article = () => {
                       <span class="mx-2">
                         <LineShareButton
                           url={shareUrl}
-                          title={article[0].title}
+                          title={article.title}
                           >
                           <LineIcon size={32} round />
                         </LineShareButton>
@@ -107,7 +107,7 @@ const Article = () => {
                       <span class="mx-2">
                         <LinkedinShareButton
                           url={shareUrl}
-                          quote={article[0].title}
+                          quote={article.title}
                           >
                           <LinkedinIcon size={32} round />
                         </LinkedinShareButton>
@@ -115,7 +115,7 @@ const Article = () => {
                       <span class="mx-2">
                         <EmailShareButton
                           url={shareUrl}
-                          title={article[0].title}
+                          title={article.title}
                           >
                           <EmailIcon size={32} round />
                         </EmailShareButton>
@@ -126,7 +126,7 @@ const Article = () => {
               </div>
             </div>
           );
-        }
+        
       }}
     </Query>
   );
