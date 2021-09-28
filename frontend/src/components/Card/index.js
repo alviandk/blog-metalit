@@ -26,7 +26,7 @@ const Card = ({ article }) => {
           {article.published_at}</Moment>
         </p>    
        </div>
-    </div>
+      </div>
     </Link>
   );
 };

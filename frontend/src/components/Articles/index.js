@@ -6,8 +6,9 @@ import CATEGORIES_QUERY from "../../queries/category/categories";
 
 const Articles = ({ articles }) => {
   const leftArticles = articles.slice(0, 6);
-    return (
-      <div class="container">
+  return (
+    <header className="py-4">
+      <div className="container px-5">
         <div class="row">
           <div class="col-md-8">
             <div class="card mb-4">
@@ -74,7 +75,8 @@ const Articles = ({ articles }) => {
 
         </div>
       </div>
-    );
+    </header>
+  );
 };
 
 export default Articles;
