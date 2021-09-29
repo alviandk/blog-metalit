@@ -10,10 +10,6 @@ const ARTICLE_QUERY = gql`
       author{
         name
       }
-      category {
-        slug
-        name
-      }
       image
     }
   }

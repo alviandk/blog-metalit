@@ -30,7 +30,6 @@ const Category = () => {
               </section>
             </div>
           );
-        }
       }}
     </Query>
   );

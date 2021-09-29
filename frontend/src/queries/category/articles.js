@@ -4,17 +4,18 @@ const CATEGORY_ARTICLES_QUERY = gql`
   query Categories($slug: String!){
     categories(slug:$slug) {
       name
-      articles {
+      slug
+      article{
         slug
         title
         content
         description
         author{
-        name
+          name
         }
         image
       }
-    }
+    } 
   }
 `;
 
