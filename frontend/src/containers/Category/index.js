@@ -15,7 +15,7 @@ const Category = () => {
             <div>
               <section>
                 <div className="container py-3">
-                  <h1 class="my-4 px-3">
+                  <h1 class="my-4 px-5">
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
                         <li class="breadcrumb-item">
