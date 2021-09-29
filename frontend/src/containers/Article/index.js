@@ -59,7 +59,10 @@ const Article = () => {
                   show_toggle: true,
                   size: 48,
                   top: 140,
-                  url: window.location.href
+                  url: window.location.href,
+                  image: imageUrl,
+                  description: article.description,
+                  title: article.title
                 }}
               />
             </div>

@@ -12,23 +12,21 @@ const Category = () => {
     <Query query={CATEGORY_ARTICLES_QUERY} slug={id}>
       {({ data: { categories } }) => {
           return (
-            <div>
-              <section>
-                <div className="container py-3">
-                  <h1 class="my-4 px-5">
-                    <nav aria-label="breadcrumb">
-                      <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                          <Link className="text-decoration-none" to="/">Blog</Link>
-                        </li>  
-                        <li class="breadcrumb-item active" aria-current="page">{categories.name}</li>
-                      </ol>
-                    </nav>
-                  </h1>
-                  <Articles articles={categories.article} />
-                </div>
-              </section>
-            </div>
+            <header className="py-5 px-3">
+              <div className="container px-5">
+                <h1>
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item">
+                        <Link className="text-decoration-none" to="/">Blog</Link>
+                      </li>  
+                      <li class="breadcrumb-item active" aria-current="page">{categories.name}</li>
+                    </ol>
+                  </nav>
+                </h1>
+              </div>
+              <Articles articles={categories.article} />
+            </header>
           );
       }}
     </Query>
