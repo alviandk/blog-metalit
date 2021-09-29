@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 const CATEGORY_ARTICLES_QUERY = gql`
-  query Category($slug: String!){
-    category(where: {slug: $slug}) {
+  query Categories($slug: String!){
+    categories(slug:$slug) {
       name
       articles {
         slug
@@ -13,10 +13,6 @@ const CATEGORY_ARTICLES_QUERY = gql`
         name
         }
         image
-        category {
-          slug
-          name
-        }
       }
     }
   }

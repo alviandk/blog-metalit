@@ -7,7 +7,6 @@ import Moment from "react-moment";
 import { useLocation } from 'react-router-dom';
 import ARTICLE_QUERY from "../../queries/article/article";
 import {StickyShareButtons} from 'sharethis-reactjs';
-import {InlineShareButtons} from 'sharethis-reactjs';
 
 const Article = () => {
   let { id } = useParams();
