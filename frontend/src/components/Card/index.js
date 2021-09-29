@@ -21,7 +21,8 @@ const Card = ({ article }) => {
         </div>
        <div class="card-footer text-muted">
         <p>
-          Posted by {article.author.name} on <Moment format="MMM Do YYYY">
+          Posted by {article.author.name} in category <b class="text-capitalize">
+          {article.Category.name}</b> on <Moment format="MMM Do YYYY">
           {article.published_at}</Moment>
         </p>    
        </div>

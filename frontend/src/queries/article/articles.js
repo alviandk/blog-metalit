@@ -11,6 +11,10 @@ const ARTICLES_QUERY = gql`
         name
       }
       image
+      Category{
+        name
+        slug
+      }
     }
   }
 `;
