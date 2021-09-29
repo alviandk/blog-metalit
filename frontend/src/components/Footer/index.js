@@ -5,13 +5,13 @@ import { Help, Contact, Term_Conditions, Privacy_Policy  } from '../../constant'
 class Footer extends Component {
   render() {
     return (
-      <footer class="bg-dark py-4 text-white">
+      <footer class="bg-dark py-4 text-white px-3">
         <div class="footer-middle">
-          <div class="container px-5 my-5">
+          <div class="container px-4 my-5">
             <div class="row mb-3">
-              <div class="col-md-3 col-sm-6">
+              <div class="col-md-4 col-sm-6">
                 <div class="footer-pad">
-                  <ul class="list-unstyled">
+                  <ul class="list-unstyled px-4">
                     <li>
                       <a class="text-reset text-decoration-none" href={Help}>
                         Pusat Bantuan
@@ -35,9 +35,9 @@ class Footer extends Component {
                   </ul>
                 </div>
               </div>
-              <div class="col-md-6 col-sm-6"></div>
-              <div class="col-md-3">
-                <p>Jl. Bangka Raya No.17, RT.13/RW.01, 
+              <div class="col-md-4 col-sm-6"></div>
+              <div class="col-md-4">
+                <p class="px-4">Jl. Bangka Raya No.17, RT.13/RW.01, 
                     Bangka,Kec. Mampang Prpt, Kota Jakarta Selatan, 
                     Daerah Khusus Ibukota Jakarta 12730
                 </p>
@@ -45,8 +45,8 @@ class Footer extends Component {
             </div>
             
             <div class="row">
-              <div class="col-md-12 copy">
-                <p class="text-center">
+              <div class="col-md-12 px-2">
+                <p class="text-center px-3">
                   All Rights Reserved | Copyright © 2021 | PT Metamorfosa Teknologi Berdikari
                 </p>
                 <div class="text-center">

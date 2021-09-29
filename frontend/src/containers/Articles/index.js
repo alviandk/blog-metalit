@@ -12,10 +12,10 @@ const Home = () => {
     return (
       <header className="py-5 px-3">
         <div className="container px-5">
-          <h1>
+          <h1 className="py-2">
             <Link className="text-decoration-none" to="/">Blog</Link>
           </h1>
-          <p>Artikel tidak tersedia</p>
+          <p className="py-2">Artikel tidak tersedia</p>
         </div>
       </header>
     );

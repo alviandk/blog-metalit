@@ -12,7 +12,7 @@ const Category = () => {
     <Query query={CATEGORY_ARTICLES_QUERY} slug={id}>
       {({ data: { categories } }) => {
           return (
-            <header className="py-5 px-3">
+            <header className="py-5 px-2">
               <div className="container px-5">
                 <h1>
                   <nav aria-label="breadcrumb">
