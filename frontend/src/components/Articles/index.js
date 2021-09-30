@@ -6,8 +6,9 @@ import CATEGORIES_QUERY from "../../queries/category/categories";
 
 const Articles = ({ articles }) => {
   const leftArticles = articles.slice(0, 6);
-    return (
-      <div class="container">
+  return (
+    <header className="py-4">
+      <div className="container px-5">
         <div class="row">
           <div class="col-md-8">
             <div class="card mb-4">
@@ -24,9 +25,9 @@ const Articles = ({ articles }) => {
               <h5 class="card-header">Categories</h5>
               <div class="card-body">
                 <Query query={CATEGORIES_QUERY} id={null}>
-                  {({ data: { categories } }) => {
-                    const left = categories.slice(0, 3);
-                    const right = categories.slice(3, 5);
+                  {({ data: { category } }) => {
+                    const left = category.slice(0, 3);
+                    const right = category.slice(3, 5);
 
                     return (
                       <div class="row">
@@ -74,7 +75,8 @@ const Articles = ({ articles }) => {
 
         </div>
       </div>
-    );
+    </header>
+  );
 };
 
 export default Articles;

@@ -1,6 +1,6 @@
 import React from 'react';
 import App from './containers/App';
-import Nav from "./components/Nav";
+import Navig from "./components/Nav";
 import Footer from "./components/Footer";
 import Articles from "./containers/Article";
 import Article from "./containers/Article";
@@ -9,7 +9,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import '@testing-library/jest-dom/extend-expect';
 
-jest.mock('./components/Nav');
+jest.mock('./components/Navig');
 jest.mock('./components/Footer');
 jest.mock('./containers/Article');
 jest.mock('./containers/Articles');
