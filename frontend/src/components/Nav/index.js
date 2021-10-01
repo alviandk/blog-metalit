@@ -14,7 +14,7 @@ const Navig = () => {
         <Navbar.Brand>
           <Link to="/">
             <img
-              class='img50 d-none d-xl-block'
+              class='img50'
               src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_38_1.png"
             />
           </Link>
