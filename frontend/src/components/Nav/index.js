@@ -12,12 +12,12 @@ const Navig = () => {
     <Navbar collapseOnSelect expand="sm" class="navbar navbar-expand-lg navbar-light mb-3">
       <div class="container">
         <Navbar.Brand>
-          <Link to="/">
+          <a href={Home}>
             <img
               class='img50'
               src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_38_1.png"
             />
-          </Link>
+          </a>
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
