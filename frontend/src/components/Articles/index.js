@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../Card";
 import Query from "../Query";
 import { Link } from "react-router-dom";
+import ReactPaginate from "react-paginate";
 import CATEGORIES_QUERY from "../../queries/category/categories";
+import { Pagination } from "react-bootstrap";
+import "../../index.css";
 
 const Articles = ({ articles }) => {
-  const leftArticles = articles.slice(0, 6);
+  const [users, setUsers] = useState(articles.slice(0, 6));
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const usersPerPage = 3;
+  const pagesVisited = pageNumber * usersPerPage;
+
+  const displayUsers = users
+    .slice(pagesVisited, pagesVisited + usersPerPage)
+    .map((article) => {
+      return <Card article={article} key={`article__${article.slug}`} />;
+    });
+
+  const pageCount = Math.ceil(users.length / usersPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
   return (
     <header className="py-4">
       <div className="container px-5">
@@ -13,11 +32,20 @@ const Articles = ({ articles }) => {
           <div class="col-md-8">
             <div class="card mb-4">
               <div class="card-body">
-                {leftArticles.map((article, i) => {
-                  return <Card article={article} key={`article__${article.slug}`} />;
-                })}
+                {displayUsers}
               </div>
             </div>
+            <ReactPaginate
+              previousLabel={"Previous"}
+              nextLabel={"Next"}
+              pageCount={pageCount}
+              onPageChange={changePage}
+              containerClassName={"paginationBttns"}
+              previousLinkClassName={"previousBttn"}
+              nextLinkClassName={"nextBttn"}
+              disabledClassName={"paginationDisabled"}
+              activeClassName={"paginationActive"}
+            />
           </div>
 
           <div class="col-md-4">
