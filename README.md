@@ -1,1 +1,3 @@
-# blog-metalit
+# Blog Metalit
+* Frontend: React
+* Backend: Django Graphql (Graphene)
