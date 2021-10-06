@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 const ARTICLES_QUERY = gql`
-  query Articles($first: Int = null, $skip: Int = null){
-    articles(first:$first, skip:$skip){
+  query Articles{
+    articles{
       slug
       title
       content

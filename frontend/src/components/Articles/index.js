@@ -8,23 +8,23 @@ import { Pagination } from "react-bootstrap";
 import "../../index.css";
 
 const Articles = ({ articles }) => {
-  const [users, setUsers] = useState(articles.slice(0, 6));
+  const [articless, setUsers] = useState(articles.slice(0, 6));
   const [pageNumber, setPageNumber] = useState(0);
-
-  const usersPerPage = 3;
-  const pagesVisited = pageNumber * usersPerPage;
-
-  const displayUsers = users
-    .slice(pagesVisited, pagesVisited + usersPerPage)
+  const articlesPerPage = 2;
+  const pagesVisited = pageNumber * articlesPerPage;
+  
+  const displayArticle = articless
+    .slice(pagesVisited, pagesVisited + articlesPerPage)
     .map((article) => {
       return <Card article={article} key={`article__${article.slug}`} />;
     });
 
-  const pageCount = Math.ceil(users.length / usersPerPage);
+  const pageCount = Math.ceil(articless.length / articlesPerPage);
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
+
   return (
     <header className="py-4">
       <div className="container px-5">
@@ -32,9 +32,10 @@ const Articles = ({ articles }) => {
           <div class="col-md-8">
             <div class="card mb-4">
               <div class="card-body">
-                {displayUsers}
+                {displayArticle}
               </div>
             </div>
+
             <ReactPaginate
               previousLabel={"Previous"}
               nextLabel={"Next"}
