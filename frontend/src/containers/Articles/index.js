@@ -21,6 +21,19 @@ const Home = () => {
     );
   }
 
+  if (loading) {
+    return (
+      <header className="py-5 px-3">
+        <div className="container px-5">
+          <h1 className="py-2">
+            <Link className="text-decoration-none" to="/">Blog</Link>
+          </h1>
+          <p className="py-2">Loading</p>
+        </div>
+      </header>
+    );
+  }
+
   return (
     <header className="py-5 px-3">
       <div className="container px-5">

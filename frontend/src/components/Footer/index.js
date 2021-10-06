@@ -56,7 +56,7 @@ class Footer extends Component {
                     </a>
                   </span>
                   <span class="mx-2">
-                    <a href="https://www.facebook.com/" target="_blank">
+                    <a href="https://www.facebook.com/Metalit-107151784977073" target="_blank">
                       <i class="fab fa-facebook-f"></i>
                     </a>
                   </span>
@@ -66,7 +66,7 @@ class Footer extends Component {
                     </a>
                   </span>
                   <span class="mx-2">
-                    <a href="https://www.linkedin.com/" target="_blank">
+                    <a href="https://www.linkedin.com/company/metalit-id" target="_blank">
                       <i class="fab fa-linkedin"></i>
                       </a>  
                     </span>  
