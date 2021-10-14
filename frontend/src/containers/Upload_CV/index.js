@@ -1,61 +1,79 @@
-import React, { Component } from 'react';
+import React, { Fragment, useState } from 'react';
+import Message from '../../components/Message';
+import Progress from '../../components/Progress';
 import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.css';
+import "../../styles.css";
 
-class CV extends Component {
-  state = {
-    file: null
+const CV = () => {
+  const [file, setFile] = useState('');
+  const [filename, setFilename] = useState('Choose File');
+  const [uploadedFile, setUploadedFile] = useState({});
+  const [message, setMessage] = useState('');
+  const [uploadPercentage, setUploadPercentage] = useState(0);
+
+  const onChange = e => {
+    setFile(e.target.files[0]);
+    setFilename(e.target.files[0].name);
   };
 
-  handleChange = (e) => {
-    this.setState({
-      [e.target.id]: e.target.value
-    })
-  };
-
-  handleImageChange = (e) => {
-    this.setState({
-      file: e.target.files[0]
-    })
-  };
-
-  handleSubmit = (e) => {
+  const onSubmit = async e => {
     e.preventDefault();
-    console.log(this.state);
-    let form_data = new FormData();
-    form_data.append('file', this.state.file);
-    let url = 'http://127.0.0.1:8000/api/upload-cv/';
-    axios.post(url, form_data, {
-      headers: {
-        'content-type': 'multipart/form-data'
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+      const res = await axios.post('http://127.0.0.1:8000/api/upload-cv/', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        },
+        onUploadProgress: progressEvent => {
+          setUploadPercentage(
+            parseInt(
+              Math.round((progressEvent.loaded * 100) / progressEvent.total)
+            )
+          );
+        }
+      });
+      
+      setTimeout(() => setUploadPercentage(0), 10000);
+      setMessage('File Uploaded');
+      
+    } catch (err) {
+      if (err.response.status === 500) {
+        setMessage('There was a problem with the server');
+      } else {
+        setMessage(err.response.data.msg);
       }
-    })
-        .then(res => {
-          console.log(res.data);
-        })
-        .catch(err => console.log(err))
+      setUploadPercentage(0)
+    }
   };
 
-  render() {
-    return (
-      <header className="py-5 px-2">
+  return (
+    <Fragment>
+      <section className="py-5">
         <div className="container px-5">
-          <h1>Upload File</h1>
-          <form onSubmit={this.handleSubmit}>
-            <br></br>         
-            <input type="file"
-                   id="file"
-                   accept="pdf"
-                   className="form-control" 
-                   onChange={this.handleImageChange} required
-              />
-            <br></br>
-            <button className="btn btn-info">Upload File</button>
-          </form>
+          <div className="row justify-content-center">
+            <div className="col-lg-8">
+              {message ? <Message msg={message} /> : null}
+              <div className="biru">
+                <form className="py-5 px-5" onSubmit={onSubmit}>  
+                  <h3 className="mb-5 text-center text-white">Upload CV</h3>
+                  <input type='file'
+                         className='form-control mb-3'
+                         id='customFile'
+                         onChange={onChange}
+                  />
+                  <Progress percentage={uploadPercentage} />
+                  <br></br>
+                  <button className="btn btn-light">Upload File</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-      </header>
-    );
-  }
-}
+      </section>
+    </Fragment>
+  );
+};
 
 export default CV;
