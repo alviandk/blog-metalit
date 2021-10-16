@@ -5,3 +5,4 @@ export const Help = Home + `/help`
 export const Contact = Home + `/contact`
 export const Term_Conditions = Home + `/term-conditions`
 export const Privacy_Policy = Home + `/privacy-policy`
+export const Upload_CV = Home + `/api/upload-cv/`

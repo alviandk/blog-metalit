@@ -3,6 +3,7 @@ import Message from '../../components/Message';
 import Progress from '../../components/Progress';
 import axios from 'axios';
 import "../../styles.css";
+import { Upload_CV  } from '../../constant';
 
 const CV = () => {
   const [file, setFile] = useState('');
@@ -22,7 +23,7 @@ const CV = () => {
     formData.append('file', file);
 
     try {
-      const res = await axios.post('http://127.0.0.1:8000/api/upload-cv/', formData, {
+      const res = await axios.post(Upload_CV, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },
@@ -59,6 +60,7 @@ const CV = () => {
                 <form className="py-5 px-5" onSubmit={onSubmit}>  
                   <h3 className="mb-5 text-center text-white">Upload CV</h3>
                   <input type='file'
+                         accept=".pdf"
                          className='form-control mb-3'
                          id='customFile'
                          onChange={onChange}
