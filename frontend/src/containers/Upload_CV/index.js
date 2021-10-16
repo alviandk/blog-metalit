@@ -13,39 +13,46 @@ const CV = () => {
   const [uploadPercentage, setUploadPercentage] = useState(0);
 
   const onChange = e => {
-    setFile(e.target.files[0]);
+    const file = e.target.files[0];
+    setFile(file);
     setFilename(e.target.files[0].name);
   };
 
   const onSubmit = async e => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append('file', file);
-
-    try {
-      const res = await axios.post(Upload_CV, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        },
-        onUploadProgress: progressEvent => {
-          setUploadPercentage(
-            parseInt(
-              Math.round((progressEvent.loaded * 100) / progressEvent.total)
-            )
-          );
-        }
-      });
-      
-      setTimeout(() => setUploadPercentage(0), 10000);
-      setMessage('File Uploaded');
-      
-    } catch (err) {
-      if (err.response.status === 500) {
-        setMessage('There was a problem with the server');
-      } else {
-        setMessage(err.response.data.msg);
+    const filesFormats = ["application/pdf"];
+    const isRightFormat = filesFormats.includes(file.type);
+    if (!isRightFormat) {
+      setMessage('You can only upload pdf files');
+    }
+    else{
+      if (file.size > 3072){
+      setMessage('File size cannot exceed more than 3 MB');
       }
-      setUploadPercentage(0)
+      else{
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('file', file);
+
+        try {
+          const res = await axios.post(Upload_CV, formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            },
+            onUploadProgress: progressEvent => {
+              const persen = parseInt(Math.round((progressEvent.loaded*100)/
+                                       progressEvent.total));
+              setUploadPercentage(persen);
+            }
+          });
+          setMessage('File Uploaded');
+        } catch (err) {
+          if (err.response.status === 500) {
+            setMessage('There was a problem with the server');
+          } else {
+            setMessage(err.response.data.msg);
+          }
+        }
+      }
     }
   };
 
@@ -60,7 +67,6 @@ const CV = () => {
                 <form className="py-5 px-5" onSubmit={onSubmit}>  
                   <h3 className="mb-5 text-center text-white">Upload CV</h3>
                   <input type='file'
-                         accept=".pdf"
                          className='form-control mb-3'
                          id='customFile'
                          onChange={onChange}
