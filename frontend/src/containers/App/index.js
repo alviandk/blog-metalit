@@ -5,6 +5,7 @@ import Footer from "../../components/Footer";
 import Articles from "../Articles";
 import Article from "../Article";
 import Category from "../Category";
+import CV from "../Upload_CV"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" component={Articles} exact />
         <Route path="/article/:id" component={Article} exact />
         <Route path="/category/:id" component={Category} exact />
+        <Route path="/upload_cv" component={CV} exact />
       </Switch>
       <Footer />
     </div>
