@@ -8,7 +8,6 @@ import { Upload_CV  } from '../../constant';
 const CV = () => {
   const [file, setFile] = useState('');
   const [filename, setFilename] = useState('Choose File');
-  const [uploadedFile, setUploadedFile] = useState({});
   const [message, setMessage] = useState('');
   const [uploadPercentage, setUploadPercentage] = useState(0);
 
@@ -62,7 +61,7 @@ const CV = () => {
         <div className="container px-5">
           <div className="row justify-content-center">
             <div className="col-lg-8">
-              {message ? <Message msg={message} /> : null}
+              {message ? <Message msg={message}/> : null}
               <div className="biru">
                 <form className="py-5 px-5" onSubmit={onSubmit}>  
                   <h3 className="mb-5 text-center text-white">Upload CV</h3>
@@ -71,7 +70,7 @@ const CV = () => {
                          id='customFile'
                          onChange={onChange}
                   />
-                  <Progress percentage={uploadPercentage} />
+                  {uploadPercentage ? <Progress percentage={uploadPercentage} /> : null}
                   <br></br>
                   <button className="btn btn-light">Upload File</button>
                 </form>

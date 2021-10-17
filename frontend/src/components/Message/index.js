@@ -1,19 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import UncontrolledAlert from '@bit/reactstrap.reactstrap.uncontrolled-alert';
 
 const Message = ({ msg }) => {
   return (
-    <div className='alert alert-info alert-dismissible fade show' role='alert'>
+    <UncontrolledAlert color='info' fade={false}>
       {msg}
-      <button
-        type='button'
-        className='close'
-        data-dismiss='alert'
-        aria-label='Close'
-      >
-        <span aria-hidden='true'>&times;</span>
-      </button>
-    </div>
+    </UncontrolledAlert>
   );
 };
 
