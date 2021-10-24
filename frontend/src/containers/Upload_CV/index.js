@@ -3,7 +3,7 @@ import axios from "axios";
 import Progress from '../../components/Progress';
 import "../../styles.css";
 import { Upload_CV  } from '../../constant';
-import UncontrolledAlert from '@bit/reactstrap.reactstrap.uncontrolled-alert';
+import Alert from 'react-bootstrap/Alert'
 
 const CV = () => {
   const [file, setFile] = useState('');
@@ -56,6 +56,8 @@ const CV = () => {
     });
     Reset.current.value = "";
     setFile(null);
+    setError();
+    setMessage();
   };
 
   return (
@@ -64,15 +66,15 @@ const CV = () => {
         <div className="container px-5">
           <div className="row justify-content-center">
             <div className="col-lg-8">
-              {error &&
-                <UncontrolledAlert color='danger' fade={true}>
+              {error ?
+                <Alert variant="danger" dismissible>
                   {error}
-                </UncontrolledAlert>
+                </Alert> : null
               }
-              {message &&
-                <UncontrolledAlert color='info' fade={true}>
+              {message ?
+                <Alert variant="success">
                   {message}
-                </UncontrolledAlert>
+                </Alert> : null
               }
               <div className="biru">
                 <form className="py-5 px-5" onSubmit={onSubmit}>  

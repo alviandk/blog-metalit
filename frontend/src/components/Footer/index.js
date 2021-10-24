@@ -36,10 +36,11 @@ class Footer extends Component {
                 </div>
               </div>
               <div class="col-md-4 col-sm-6"></div>
-              <div class="col-md-4">
-                <p class="px-4">Jl. Bangka Raya No.17, RT.13/RW.01, 
+              <div class="col-md-3">
+                <p class="px-3">Jl. Bangka Raya No.17, RT.13/RW.01, 
                     Bangka,Kec. Mampang Prpt, Kota Jakarta Selatan, 
                     Daerah Khusus Ibukota Jakarta 12730
+                    <br/>Telp. 0857-7979-3635
                 </p>
               </div>   
             </div>
