@@ -25,7 +25,7 @@ const CV = () => {
     }
     else{
       if (file.size > 3072 * 1024){
-      setMessage('File size cannot exceed more than 3 MB');
+        setMessage('File size cannot exceed more than 3 MB');
       }
       else{
         e.preventDefault();
