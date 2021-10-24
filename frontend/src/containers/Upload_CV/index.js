@@ -24,7 +24,9 @@ const CV = () => {
       setMessage('You can only upload pdf files');
     }
     else{
-      
+      if (file.size > 3072 * 1024){
+      setMessage('File size cannot exceed more than 3 MB');
+      }
       else{
         e.preventDefault();
         const formData = new FormData();
