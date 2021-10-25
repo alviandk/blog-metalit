@@ -1,14 +1,19 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import UncontrolledAlert from '@bit/reactstrap.reactstrap.uncontrolled-alert';
+import Alert from 'react-bootstrap/Alert';
+import React, { useState } from "react";
+import Button from 'react-bootstrap/Button'
 
-const Message = ({ msg }) => {
-  return (
-    <UncontrolledAlert color='info' fade={true}>
-      {msg}
-    </UncontrolledAlert>
-  );
-};
+const Message = ({ msg, variant }) => {
+  const [show, setShow] = useState(true);
+  if (show) {
+    return (
+      <Alert variant={variant} onClose={() => setShow(false)} dismissible>
+      	{msg}
+      </Alert>
+    );
+  }
+  return <Button variant="outline-light" onClick={() => setShow(true)}></Button>;
+}
 
 
 Message.propTypes = {

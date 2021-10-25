@@ -1,9 +1,9 @@
-import React, { Fragment, useEffect, useState, useRef } from "react";
+import React, { Fragment, useState, useRef } from "react";
 import axios from "axios";
 import Progress from '../../components/Progress';
 import "../../styles.css";
 import { Upload_CV  } from '../../constant';
-import Alert from 'react-bootstrap/Alert'
+import Message from '../../components/Message';
 
 const CV = () => {
   const [file, setFile] = useState('');
@@ -66,16 +66,8 @@ const CV = () => {
         <div className="container px-5">
           <div className="row justify-content-center">
             <div className="col-lg-8">
-              {error ?
-                <Alert variant="danger" dismissible>
-                  {error}
-                </Alert> : null
-              }
-              {message ?
-                <Alert variant="success">
-                  {message}
-                </Alert> : null
-              }
+              {message ? <Message variant="info" msg={message}/> : null}
+              {error ? <Message variant="danger" msg={error}/> : null}
               <div className="biru">
                 <form className="py-5 px-5" onSubmit={onSubmit}>  
                   <h3 className="mb-5 text-center text-white">Upload CV</h3>
