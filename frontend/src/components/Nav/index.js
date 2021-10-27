@@ -23,7 +23,6 @@ const Navig = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <Nav.Link className="nav-item text-uppercase px-3 " href={Home}>Beranda</Nav.Link>
             <Nav.Link className="nav-item text-uppercase px-3 " href={Course}>Pelatihan</Nav.Link>
             <NavLink to="/" className="nav-item text-uppercase px-3 nav-link active">Blog</NavLink>
             <Nav.Link className="nav-item text-uppercase px-3 " href={About}>Tentang Kami</Nav.Link>
