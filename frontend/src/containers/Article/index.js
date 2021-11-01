@@ -1,10 +1,8 @@
 import React from "react";
 import { useParams } from "react-router";
 import Query from "../../components/Query";
-import ReactMarkdown from "react-markdown";
 import ReactHtmlParser from "react-html-parser";
 import Moment from "react-moment";
-import { useLocation } from 'react-router-dom';
 import ARTICLE_QUERY from "../../queries/article/article";
 import {StickyShareButtons} from 'sharethis-reactjs';
 

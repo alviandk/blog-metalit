@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useRef } from "react";
+import React, { Fragment, useState } from "react";
 import axios from "axios";
 import Progress from '../../components/Progress';
 import "../../styles.css";

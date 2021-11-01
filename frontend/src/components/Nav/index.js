@@ -1,10 +1,7 @@
 import React from "react";
-import Query from "../Query";
-import { Link } from "react-router-dom";
 import { NavLink } from 'react-router-dom'
-import CATEGORIES_QUERY from "../../queries/category/categories";
 import { Home, Course, About} from "../../constant";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import "../../index.css";
 
 const Navig = () => {
@@ -14,7 +11,7 @@ const Navig = () => {
         <Navbar.Brand>
           <a href={Home}>
             <img
-              class='img50'
+              className='img50'
               src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_38_1.png"
             />
           </a>

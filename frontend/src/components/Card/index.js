@@ -9,7 +9,7 @@ const Card = ({ article }) => {
       <div class="card mb-4">
         <div>
           <img
-            class="card-img-top lazy-image"
+            className="card-img-top lazy-image"
             src={imageUrl}
             alt={imageUrl}
             height="100"
@@ -19,13 +19,13 @@ const Card = ({ article }) => {
           <h1>{article.title}</h1>
           <p>{article.description}</p>
         </div>
-       <div class="card-footer text-muted">
-        <p>
-          Posted by {article.author.name} in category <b class="text-capitalize">
-          {article.Category.name}</b> on <Moment format="MMM Do YYYY">
-          {article.published_at}</Moment>
-        </p>    
-       </div>
+        <div class="card-footer text-muted">
+          <p>
+            Posted by {article.author.name} in category <b class="text-capitalize">
+            {article.Category.name}</b> on <Moment format="MMM Do YYYY">
+            {article.published_at}</Moment>
+          </p>    
+        </div>
       </div>
     </Link>
   );

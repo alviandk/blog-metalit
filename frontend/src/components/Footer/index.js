@@ -1,5 +1,4 @@
-import React, { Component, Fragment } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from "react";
 import { Help, Contact, Term_Conditions, Privacy_Policy  } from '../../constant';
 
 class Footer extends Component {
