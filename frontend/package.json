@@ -29,7 +29,8 @@
     "react-share": "^4.4.0",
     "remark-gfm": "^2.0.0",
     "save": "^2.4.0",
-    "sharethis-reactjs": "^1.6.0"
+    "sharethis-reactjs": "^1.6.0",
+    "use-axios-client": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

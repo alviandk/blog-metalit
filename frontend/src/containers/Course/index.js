@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { API_Course } from '../../constant';
 
 class Course extends Component {
@@ -8,6 +8,7 @@ class Course extends Component {
 
 
     async componentDidMount() {
+        document.title = "Metalit - Course";
         try { 
             const res = await fetch(API_Course);
             const course = await res.json();
@@ -16,27 +17,30 @@ class Course extends Component {
             });
         } catch (e) {
             console.log(e);
+            this.setState({ errorMessage: "Course Tidak Tersedia" });
         }
     }
 
     render() {
+        const { errorMessage } = this.state;
         return(
-          <div className="py-4">
+          <header className="py-5 px-3">
             <div className="container px-5">
-              <div className="row">
-                <div className="col-md-8">
-                  <div className="card-body">
-                    {this.state.course.map(item => (
-                      <div key={item.id}>
-                        <h1>{item.title}</h1>  
-                        <p>{item.description}</p>                  
+              <h1>Course</h1>
+              {errorMessage ? <p className="py-2">{errorMessage}</p> : null}
+              <div>
+                <div class="card-body">
+                  {this.state.course.map(item => (
+                    <div key={item.id}>
+                      <h2>{item.title}</h2>  
+                      <p>{item.description}</p>                  
                       </div>
-                    ))}
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
-          </div>
+
+          </header>
        );
     }
 }
