@@ -4,8 +4,10 @@ import Progress from '../../components/Progress';
 import "../../styles.css";
 import { Upload_CV  } from '../../constant';
 import Message from '../../components/Message';
+import { Helmet } from 'react-helmet'
 
 const CV = () => {
+  const TITLE = 'My Page Title'
   const [file, setFile] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState();
