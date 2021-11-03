@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/client';
 
 const Home = () => {
-  const { loading, error, data } = useQuery(ARTICLES_QUERY);  
+  const { loading, error } = useQuery(ARTICLES_QUERY);  
   if (error) {
     console.error(error);
     return (

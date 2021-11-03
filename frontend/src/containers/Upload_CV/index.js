@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useRef } from "react";
+import React, { Fragment, useState } from "react";
 import axios from "axios";
 import Progress from '../../components/Progress';
 import "../../styles.css";
@@ -66,7 +66,7 @@ const CV = () => {
         <div className="container px-5">
           <div className="row justify-content-center">
             <div className="col-lg-8">
-              {message ? <Message variant="info" msg={message}/> : null}
+              {message ? <Message variant="success" msg={message}/> : null}
               {error ? <Message variant="danger" msg={error}/> : null}
               <div className="biru">
                 <form className="py-5 px-5" onSubmit={onSubmit}>  
