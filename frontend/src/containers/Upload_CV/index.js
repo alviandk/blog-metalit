@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
 import Progress from '../../components/Progress';
 import "../../styles.css";
@@ -11,7 +11,11 @@ const CV = () => {
   const [error, setError] = useState();
   const [uploadPercentage, setUploadPercentage] = useState(0);
   const Reset = React.useRef()
-  
+
+  useEffect(() => {
+     document.title = "Blog - Upload CV";  
+  }, []);
+
   const onChange = e => {
     const file = e.target.files[0];
     setFile(file);
