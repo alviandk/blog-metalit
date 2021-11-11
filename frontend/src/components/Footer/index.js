@@ -51,7 +51,7 @@ class Footer extends Component {
                 </p>
                 <div class="text-center">
                   <span class="mx-2">
-                    <a href="https://twitter.com/idmetalit" target="_blank">
+                    <a href="https://twitter.com/metalit_id" target="_blank">
                       <i class="fab fa-twitter"></i>
                     </a>
                   </span>
