@@ -40,9 +40,6 @@ class Course extends Component {
                         </div>
                         <div class="card-body">
                           <h4 class="card-title">{item.course_name}</h4>
-                          <p class="card-text">              
-                            {item.description}
-                          </p>
                         </div>
                       </div>
                     </Link>
