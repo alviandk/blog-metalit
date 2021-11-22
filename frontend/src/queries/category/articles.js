@@ -1,25 +1,35 @@
 import gql from 'graphql-tag';
 
 const CATEGORY_ARTICLES_QUERY = gql`
-  query Categories($slug: String!){
-    categories(slug:$slug) {
+  query Categories($slug: String!, $after: String){
+    categories(slug:$slug){
+      id
       name
-      slug
-      article{
-        slug
-        title
-        content
-        description
-        author{
-          name
+      article(first: 1, after: $after){
+        pageInfo{
+          startCursor
+          hasNextPage
+          endCursor
         }
-        image
-        Category{
-          name
-          slug
+        edges{
+          node{
+            id
+            title
+            description
+            content
+            slug
+            image
+            author{
+              name
+            }
+            Category{
+              name
+              slug
+            }
+          }
         }
       }
-    } 
+    }
   }
 `;
 

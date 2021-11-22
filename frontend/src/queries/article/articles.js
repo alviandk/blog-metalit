@@ -1,19 +1,29 @@
 import gql from "graphql-tag";
 
 const ARTICLES_QUERY = gql`
-  query Articles{
-    articles{
-      slug
-      title
-      content
-      description
-      author{
-        name
+  query Articles($after: String){
+    articles(first: 1, after: $after){
+      pageInfo {
+        startCursor
+        hasNextPage
+        endCursor
       }
-      image
-      Category{
-        name
-        slug
+      edges {
+        node {
+          id
+          title
+          description
+          content
+          slug
+          image
+          author{
+            name
+          }
+          Category{
+            name
+            slug
+          }
+        }
       }
     }
   }

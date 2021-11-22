@@ -15,19 +15,19 @@ const Article = () => {
         return (
           <header className="py-5 px-3">
             <div className="container px-5 py-5">
-              <div class="jumbotron"> 
-                <h1 class="text-center mb-5">{article.title}</h1>   
+              <div className="jumbotron"> 
+                <h1 className="text-center mb-5">{article.title}</h1>   
                 <p>
                   Posted by {article.author.name} at <Moment format="MMM Do YYYY">
                   {article.published_at}</Moment>
                 </p>
-                <div class="mb-5">
+                <div className="mb-5">
                   <img
                     src={imageUrl}
                     alt={imageUrl}
                   />
                 </div>
-                <div class="mb-5">
+                <div className="mb-5">
                   {ReactHtmlParser(article.content)}
                 </div>
               </div>

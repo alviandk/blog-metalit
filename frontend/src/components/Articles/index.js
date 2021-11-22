@@ -1,28 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "../Card";
 import Query from "../Query";
 import { Link } from "react-router-dom";
-import ReactPaginate from "react-paginate";
 import CATEGORIES_QUERY from "../../queries/category/categories";
 import "../../index.css";
+import ARTICLES_QUERY from "../../queries/article/articles";
+import { useQuery } from '@apollo/client';
 
 const Articles = ({ articles }) => {
-  const [articless] = useState(articles.slice(0, 6));
-  const [pageNumber, setPageNumber] = useState(0);
-  const articlesPerPage = 2;
-  const pagesVisited = pageNumber * articlesPerPage;
-  
-  const displayArticle = articless
-    .slice(pagesVisited, pagesVisited + articlesPerPage)
-    .map((article) => {
-      return <Card article={article} key={`article__${article.slug}`} />;
+  const delay = true;
+  const { data, fetchMore } = useQuery(ARTICLES_QUERY, {
+    variables: { delay },
+    notifyOnNetworkStatusChange: true,
+  });
+
+  const displayArticle = articles.edges.map((edge) => {
+      return <Card article={edge.node} key={`article__${edge.node.id}`} />;
     });
-
-  const pageCount = Math.ceil(articless.length / articlesPerPage);
-
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
 
   return (
     <header className="py-4">
@@ -35,17 +29,23 @@ const Articles = ({ articles }) => {
               </div>
             </div>
 
-            <ReactPaginate
-              previousLabel={"Previous"}
-              nextLabel={"Next"}
-              pageCount={pageCount}
-              onPageChange={changePage}
-              containerClassName={"paginationBttns"}
-              previousLinkClassName={"previousBttn"}
-              nextLinkClassName={"nextBttn"}
-              disabledClassName={"paginationDisabled"}
-              activeClassName={"paginationActive"}
-            />
+            <button
+              className="btn btn-primary"
+              onClick={() => {
+                const { endCursor } = data.articles.pageInfo;
+                fetchMore({
+                  variables: { after: endCursor },
+                  updateQuery: (prevResult, { fetchMoreResult }) => {
+                    fetchMoreResult.articles.edges = [
+                      ...prevResult.articles.edges,
+                      ...fetchMoreResult.articles.edges
+                    ];
+                    return fetchMoreResult;
+                  }
+                });
+              }}
+            >More
+          </button>
           </div>
 
           <div className="col-md-4">

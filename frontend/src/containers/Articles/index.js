@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/client';
 
 const Home = () => {
-  const { loading, error } = useQuery(ARTICLES_QUERY);  
+  const { error, loading } = useQuery(ARTICLES_QUERY);
+
   if (error) {
     console.error(error);
     return (
@@ -39,8 +40,8 @@ const Home = () => {
       <div className="container px-5">
         <h1>
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item">
                 <Link className="text-decoration-none" to="/">Blog</Link>
               </li>  
             </ol>
@@ -53,6 +54,7 @@ const Home = () => {
           return <Articles articles={articles} />;
         }}
       </Query>
+      
     </header>
   );
 };
