@@ -6,7 +6,7 @@ const Card = ({ article }) => {
   const imageUrl = article.image;
   return (
     <Link to={`/article/${article.slug}`} className="uk-link-reset">
-      <div class="card mb-4">
+      <div className="card mb-4">
         <div>
           <img
             className="card-img-top lazy-image"
@@ -15,13 +15,13 @@ const Card = ({ article }) => {
             height="100"
           />
         </div>
-        <div class="card-body">
+        <div className="card-body">
           <h1>{article.title}</h1>
           <p>{article.description}</p>
         </div>
-        <div class="card-footer text-muted">
+        <div className="card-footer text-muted">
           <p>
-            Posted by {article.author.name} in category <b class="text-capitalize">
+            Posted by {article.author.name} in category <b className="text-capitalize">
             {article.Category.name}</b> on <Moment format="MMM Do YYYY">
             {article.published_at}</Moment>
           </p>    

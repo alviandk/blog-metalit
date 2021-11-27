@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { API_Course } from '../../constant';
+import { Link } from "react-router-dom";
 
 class Course extends Component {
     state = {
@@ -29,23 +30,22 @@ class Course extends Component {
               <h1>Course</h1>
               {errorMessage ? <p className="py-2">{errorMessage}</p> : null}
 
-              <div class="row">  
+              <div class="row"> 
                 {this.state.course.map(item => (
                   <div key={item.id} class="col-md-4 mb-5">
-                    <div class="card h-100">
-                      <div class="placeholder-item placeholder-loading">
-                        <img class="card-img-top lazy-image" src={item.cover_image}></img>
+                    <Link to={`/course/${item.slug}`} className="uk-link-reset">
+                      <div class="card h-100">
+                        <div class="placeholder-item placeholder-loading">
+                          <img class="card-img-top lazy-image" src={item.cover_image}></img>
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title">{item.course_name}</h4>
+                        </div>
                       </div>
-                      <div class="card-body">
-                        <h4 class="card-title">{item.course_name}</h4>
-                        <p class="card-text">              
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
+                    </Link>
                   </div>
                 ))}
-            </div>
+              </div>
             </div>
           </header>
        );

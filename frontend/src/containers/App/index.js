@@ -7,6 +7,7 @@ import Article from "../Article";
 import Category from "../Category";
 import CV from "../Upload_CV"
 import Course from '../Course';
+import Detail from '../Detail-Course';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/category/:id" component={Category} exact />
         <Route path="/upload_cv" component={CV} exact />
         <Route path="/course" component={Course} exact />
+        <Route path="/course/:id" component={Detail} exact />
       </Switch>
       <Footer />
     </div>
