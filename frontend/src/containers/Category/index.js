@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 
 const Category = () => {
   let { id } = useParams();
-
   return (
     <Query query={CATEGORY_ARTICLES_QUERY} slug={id}>
       {({ data: { categories } }) => {

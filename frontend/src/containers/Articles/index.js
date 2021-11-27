@@ -6,8 +6,11 @@ import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/client';
 
 const Home = () => {
-  const { error, loading } = useQuery(ARTICLES_QUERY);
-
+  const delay = true;
+  const { error, data, loading, fetchMore } = useQuery(ARTICLES_QUERY, {
+    notifyOnNetworkStatusChange: true,
+  })
+  
   if (error) {
     console.error(error);
     return (
@@ -51,9 +54,30 @@ const Home = () => {
 
       <Query query={ARTICLES_QUERY}>
         {({ data: { articles } }) => {
-          return <Articles articles={articles} />;
+          return <Articles articles={articles}/>
         }}
       </Query>
+
+      <div className="container px-5">
+        {data.articles.pageInfo.hasNextPage && (<button
+          className="btn btn-primary"
+            onClick={() => {
+              const { endCursor } = data.articles.pageInfo;
+              fetchMore({
+                variables: { after: endCursor },
+                updateQuery: (prevResult, { fetchMoreResult }) => {
+                  fetchMoreResult.articles.edges = [
+                    ...prevResult.articles.edges,
+                    ...fetchMoreResult.articles.edges
+                  ];
+                  return fetchMoreResult;
+                }
+              });
+            }}
+          >More
+          </button>
+        )}
+      </div>
       
     </header>
   );
