@@ -18,13 +18,13 @@ const Articles = ({ articles }) => {
       <div className="container px-5">
         <div className="row">
           <div className="col-md-8">
-            <div className="card mb-4">
-              <div className="card-body">
-                {displayArticle}
-              </div>
+            <div className="card-body">
+              {displayArticle}
             </div>
           </div>
+
           <Category_Nav />
+
         </div>
       </div>
     </header>
