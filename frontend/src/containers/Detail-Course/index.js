@@ -39,7 +39,6 @@ function Detail() {
                     {ReactHtmlParser(item.prerequisites)}
                   </div>
                 ))}
-            
               </div>
             </div>
           </header>
