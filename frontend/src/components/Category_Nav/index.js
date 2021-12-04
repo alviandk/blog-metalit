@@ -6,7 +6,7 @@ import Query from "../../components/Query";
 const Category_Nav = () => {
   return (
           <div className="col-md-4">
-            <div className="card my-4">
+            <div className="card">
               <h5 className="card-header">Kategori</h5>
               <div className="card-body">
                 <Query query={CATEGORIES_QUERY} id={null}>
