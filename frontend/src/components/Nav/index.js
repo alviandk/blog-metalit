@@ -7,7 +7,7 @@ import { Home, Course, About} from "../../constant";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "../../index.css";
 
-const Navig = () => {
+const Navig = ({data}) => {
   return (
     <Navbar collapseOnSelect expand="sm" class="navbar navbar-expand-lg navbar-light mb-3">
       <div class="container">
@@ -25,6 +25,8 @@ const Navig = () => {
           <Nav className="navbar-nav ms-auto mb-2 mb-lg-0">
             <Nav.Link className="nav-item text-uppercase px-3 " href={Course}>Pelatihan</Nav.Link>
             <NavLink to="/" className="nav-item text-uppercase px-3 nav-link active">Blog</NavLink>
+            <NavLink to="/daftar" className="nav-item text-uppercase px-3 nav-link active">Daftar</NavLink>
+            <NavLink to="/login" className="nav-item text-uppercase px-3 nav-link active">{data!=null ? "LOGOUT" : "LOGIN"}</NavLink>
             <Nav.Link className="nav-item text-uppercase px-3 " href={About}>Tentang Kami</Nav.Link>
           </Nav>
         </Navbar.Collapse>

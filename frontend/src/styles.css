@@ -11331,3 +11331,20 @@ html {
   background-color: #0f5da9;
 }
 
+input{
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+label{
+  color: white;
+}
+
+.marginfield {
+  margin: 20px;
+}
+
+form i {
+  margin-left: -30px;
+  cursor: pointer;
+}
