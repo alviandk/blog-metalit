@@ -5,7 +5,6 @@ import Query from "../../components/Query";
 
 const Category_Nav = () => {
   return (
-          <div className="col-md-4">
             <div className="card">
               <h5 className="card-header">Kategori</h5>
               <div className="card-body">
@@ -31,12 +30,11 @@ const Category_Nav = () => {
                           </ul>
                         </div>
                       </div>
-                      );
-                    }}
-                  </Query>
+                    );
+                  }}
+                </Query>
               </div>
             </div>
-        </div>
   );
 };
 

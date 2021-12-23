@@ -16,16 +16,19 @@ class Footer extends Component {
                         Pusat Bantuan
                       </a>
                     </li>
-                    <li>
+
                     <li>
                       <a className="text-reset text-decoration-none" href={Contact}>
                         Hubungi Kami
                       </a>
                     </li>
+
+                    <li>
                       <a className="text-reset text-decoration-none" href={Term_Conditions}>
                         Syarat dan Ketentuan
                       </a>
                     </li>
+
                     <li>
                       <a className="text-reset text-decoration-none" href={Privacy_Policy}>
                         Kebijakan Privasi
@@ -69,7 +72,7 @@ class Footer extends Component {
                     <a href="https://www.linkedin.com/company/metalit-id" target="_blank">
                       <i className="fab fa-linkedin"></i>
                       </a>  
-                    </span>  
+                  </span>  
                 </div>
               </div>
             </div>

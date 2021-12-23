@@ -1,8 +1,6 @@
 import React from "react";
 import { useParams } from "react-router";
-import { Link } from "react-router-dom";
 import Category_Nav from "../../components/Category_Nav";
-import CATEGORIES_QUERY from "../../queries/category/categories";
 import Query from "../../components/Query";
 import ReactHtmlParser from "react-html-parser";
 import Moment from "react-moment";
@@ -76,8 +74,9 @@ const Article = () => {
               </div>
             </div>
           </div>
-
-          <Category_Nav />
+          <div className="col-md-4">
+            <Category_Nav />
+          </div>
 
         </div>
       </div>

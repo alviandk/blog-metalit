@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from 'react'
 import Articles from "../../components/Articles";
 import Query from "../../components/Query";
 import ARTICLES_QUERY from "../../queries/article/articles";
@@ -6,10 +6,8 @@ import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/client';
 
 const Home = () => {
-  const delay = true;
-  const { error, data, loading, fetchMore } = useQuery(ARTICLES_QUERY, {
-    notifyOnNetworkStatusChange: true,
-  })
+  const { error, data, loading, fetchMore } = useQuery(ARTICLES_QUERY)
+  const [name, setName] = useState('');
   
   if (error) {
     console.error(error);
@@ -52,9 +50,9 @@ const Home = () => {
         </h1>
       </div>
 
-      <Query query={ARTICLES_QUERY}>
+      <Query query={ARTICLES_QUERY} name={name}>
         {({ data: { articles } }) => {
-          return <Articles articles={articles}/>
+          return <Articles articles={articles} />
         }}
       </Query>
 
@@ -74,7 +72,7 @@ const Home = () => {
                 }
               });
             }}
-          >More
+          >Lebih Banyak
           </button>
         )}
       </div>
