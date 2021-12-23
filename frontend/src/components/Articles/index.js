@@ -1,17 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../Card";
 import Category_Nav from "../Category_Nav";
-import Query from "../Query";
-import { Link } from "react-router-dom";
-import CATEGORIES_QUERY from "../../queries/category/categories";
 import "../../index.css";
-import ARTICLES_QUERY from "../../queries/article/articles";
-import { useQuery } from '@apollo/client';
+import Search from "../../components/Search";
 
-const Articles = ({ articles }) => {
+const Articles = ({ articles, name }) => {
   const displayArticle = articles.edges.map((edge) => {
       return <Card article={edge.node} key={`article__${edge.node.id}`} />;
     });
+
+  const [state, setState] = useState({
+    results: displayArticle,
+  });
+
+  const onSearch = async (text) => {
+    const results = articles.edges.map((edge) => {
+      return <Card article={edge.node} key={`article__${edge.node.id}`} />;
+    });
+
+    setState(prevState => {
+      return { ...prevState, results: results}
+    })
+  };
 
   return (
     <header className="py-4">
@@ -20,13 +30,15 @@ const Articles = ({ articles }) => {
           <div className="col-md-8">
             <div className="card mb-4">
               <div className="card-body">
-                {displayArticle}
+                {state.results}
+
               </div>
             </div>
           </div>
-
-          <Category_Nav />
-
+          <div className="col-md-4">
+            <Search onSearch={onSearch}/><br/>
+            <Category_Nav />
+          </div>
         </div>
       </div>
     </header>

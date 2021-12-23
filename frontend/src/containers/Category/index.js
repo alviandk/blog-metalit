@@ -8,9 +8,8 @@ import { useQuery } from '@apollo/client';
 
 const Category = () => {
   let { id } = useParams();
-  const delay = true;
   const { error, data, loading, fetchMore } = useQuery(CATEGORY_ARTICLES_QUERY, {
-    variables: { slug: id }, notifyOnNetworkStatusChange: true,
+    variables: { slug: id }
   })
 
   if (error) {
@@ -48,11 +47,11 @@ const Category = () => {
               <div className="container px-5">
                 <h1>
                   <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb-item">
+                    <ol className="breadcrumb">
+                      <li className="breadcrumb-item">
                         <Link className="text-decoration-none" to="/">Blog</Link>
                       </li>  
-                      <li class="breadcrumb-item active" aria-current="page">{categories.name}</li>
+                      <li className="breadcrumb-item active" aria-current="page">{categories.name}</li>
                     </ol>
                   </nav>
                 </h1>
@@ -75,7 +74,7 @@ const Category = () => {
               }
             });
           }}
-        >More
+        >Lebih Banyak
         </button>
       )}
       </div>

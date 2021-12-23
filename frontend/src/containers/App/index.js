@@ -8,8 +8,10 @@ import Category from "../Category";
 import CV from "../Upload_CV"
 import Course from '../Course';
 import Detail from '../Detail-Course';
+import useGaTracker from "../../useGaTracker";
 
 function App() {
+  useGaTracker()
   return (
     <div className="App">
       <Navig />
