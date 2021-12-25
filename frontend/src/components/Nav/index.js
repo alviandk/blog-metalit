@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from 'react-router-dom'
-import { Home, Course, About} from "../../constant";
+import { Home, Course, Login, Daftar } from "../../constant";
 import { Nav, Navbar } from "react-bootstrap";
 import "../../index.css";
 
@@ -22,7 +22,8 @@ const Navig = () => {
           <Nav className="navbar-nav ms-auto mb-2 mb-lg-0">
             <Nav.Link className="nav-item text-uppercase px-3 " href={Course}>Pelatihan</Nav.Link>
             <NavLink to="/" className="nav-item text-uppercase px-3 nav-link active">Blog</NavLink>
-            <Nav.Link className="nav-item text-uppercase px-3 " href={About}>Tentang Kami</Nav.Link>
+            <Nav.Link className="nav-item text-uppercase px-3 " href={Login}>Login</Nav.Link>
+            <Nav.Link className="nav-item text-uppercase px-3 " href={Daftar}>Daftar</Nav.Link>
           </Nav>
         </Navbar.Collapse>
         </div>
