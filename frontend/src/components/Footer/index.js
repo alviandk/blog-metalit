@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Help, Contact, Term_Conditions, Privacy_Policy  } from '../../constant';
+import { Help, About, Contact, Term_Conditions, Privacy_Policy  } from '../../constant';
 
 class Footer extends Component {
   render() {
@@ -14,6 +14,11 @@ class Footer extends Component {
                     <li>
                       <a className="text-reset text-decoration-none" href={Help}>
                         Pusat Bantuan
+                      </a>
+                    </li>
+                    <li>
+                      <a className="text-reset text-decoration-none" href={About}>
+                        Tentang Kami
                       </a>
                     </li>
 
