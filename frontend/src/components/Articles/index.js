@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Card from "../Card";
 import Category_Nav from "../Category_Nav";
 import "../../index.css";
-import Search from "../../components/Search";
+/* import Search from "../../components/Search"; */
 
 const Articles = ({ articles, name }) => {
   const displayArticle = articles.edges.map((edge) => {
@@ -36,7 +36,8 @@ const Articles = ({ articles, name }) => {
             </div>
           </div>
           <div className="col-md-4">
-            <Search onSearch={onSearch}/><br/>
+            {/* <Search onSearch={onSearch}/> */}
+            {/* <br/> */}
             <Category_Nav />
           </div>
         </div>
