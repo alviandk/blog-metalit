@@ -1,7 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
 import Progress from '../../components/Progress';
-import "../../styles.css";
 import { Upload_CV  } from '../../constant';
 import Message from '../../components/Message';
 

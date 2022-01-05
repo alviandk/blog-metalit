@@ -50,7 +50,7 @@ const Home = () => {
         </h1>
       </div>
 
-      <Query query={ARTICLES_QUERY} name={name}>
+      <Query query={ARTICLES_QUERY}>
         {({ data: { articles } }) => {
           return <Articles articles={articles} />
         }}
