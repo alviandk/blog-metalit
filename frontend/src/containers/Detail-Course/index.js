@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router";
 import axios from 'axios'
-import { API_Course } from '../../constant';
+import { API_COURSE } from '../../constant';
 import ReactHtmlParser from "react-html-parser";
 
 function Detail() {
@@ -11,7 +11,7 @@ function Detail() {
 
   useEffect(() => {
     axios
-      .get(API_Course + id )
+      .get(API_COURSE + id )
       .then(res => {
         setCourse(res.data)
         setSyllabus(res.data.syllabus)
@@ -26,7 +26,7 @@ function Detail() {
   return (
           <header className="py-5 px-3">
             <div className="container px-5 py-5">
-              <div class="jumbotron"> 
+              <div className="jumbotron"> 
                 <h1>Silabus : {course.course_name}</h1>   
                 <p>{ReactHtmlParser(course.description)}</p>
                 {syllabus.map(item => (

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { API_Course } from '../../constant';
+import { API_COURSE } from '../../constant';
 import { Link } from "react-router-dom";
 
 class Course extends Component {
@@ -11,7 +11,7 @@ class Course extends Component {
     async componentDidMount() {
         document.title = "Metalit - Course";
         try { 
-            const res = await fetch(API_Course);
+            const res = await fetch(API_COURSE);
             const course = await res.json();
             this.setState({
                 course

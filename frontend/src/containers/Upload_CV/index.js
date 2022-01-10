@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
 import Progress from '../../components/Progress';
-import { Upload_CV  } from '../../constant';
+import { UPLOAD_CV  } from '../../constant';
 import Message from '../../components/Message';
 
 const CV = () => {
@@ -35,7 +35,7 @@ const CV = () => {
       },
     };
 
-    axios.post(Upload_CV, formData, options,{
+    axios.post(UPLOAD_CV, formData, options,{
       headers: {
           'Content-Type': 'multipart/form-data'
          },
