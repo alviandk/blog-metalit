@@ -21,13 +21,13 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Use Node.js 16
         uses: actions/setup-node@v2
-        env:
-          CI: false
         with:
           node-version: 16
           cache: 'yarn'
           cache-dependency-path: frontend/yarn.lock
       - run: yarn install
       - run: yarn build
+        env:
+          CI: false
       - name: Deploy app build to S3 bucket
         run: aws s3 sync ./dist/ s3://{{ secrets.BUCKET_NAME }} --delete
