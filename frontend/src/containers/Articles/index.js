@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Articles from "../../components/Articles";
 import Query from "../../components/Query";
 import ARTICLES_QUERY from "../../queries/article/articles";
@@ -7,7 +7,6 @@ import { useQuery } from '@apollo/client';
 
 const Home = () => {
   const { error, data, loading, fetchMore } = useQuery(ARTICLES_QUERY)
-  const [name, setName] = useState('');
   
   if (error) {
     console.error(error);

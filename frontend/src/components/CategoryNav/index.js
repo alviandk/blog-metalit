@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import CATEGORIES_QUERY from "../../queries/category/categories";
 import Query from "../../components/Query";
 
-const Category_Nav = () => {
+const CategoryNav = () => {
   return (
             <div className="card">
               <h5 className="card-header">Kategori</h5>
@@ -38,4 +38,4 @@ const Category_Nav = () => {
   );
 };
 
-export default Category_Nav;
+export default CategoryNav;

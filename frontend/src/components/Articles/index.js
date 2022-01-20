@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "../Card";
-import Category_Nav from "../Category_Nav";
+import CategoryNav from "../CategoryNav";
 
 const Articles = ({ articles }) => {
   const displayArticle = articles.edges.map((edge) => {
@@ -20,7 +20,7 @@ const Articles = ({ articles }) => {
             </div>
           </div>
           <div className="col-md-4">
-            <Category_Nav />
+            <CategoryNav />
           </div>
         </div>
       </div>

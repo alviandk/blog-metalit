@@ -11,6 +11,7 @@ const Navig = () => {
           <a href={HOME}>
             <img
               className='img50'
+              alt=""
               src="https://metalit.oss-ap-southeast-5.aliyuncs.com/static/metalit/assets/images/Group_38_1.png"
             />
           </a>

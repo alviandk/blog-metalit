@@ -36,7 +36,7 @@ class Course extends Component {
                     <Link to={`/course/${item.slug}`} className="uk-link-reset">
                       <div className="card h-100">
                         <div className="placeholder-item placeholder-loading">
-                          <img className="card-img-top lazy-image" src={item.cover_image}></img>
+                          <img className="card-img-top lazy-image" src={item.cover_image} alt=""></img>
                         </div>
                         <div className="card-body">
                           <h4 className="card-title">{item.course_name}</h4>
